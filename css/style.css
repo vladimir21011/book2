@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before{margin: 0;/*border: 0*/;padding: 0;box-sizing: border-box;}
+body {
+    background-color:#c9ddb9
+    }
+.wrapper{
+    width: 1200px;
+    margin: 0 auto ;
+    display: grid;
+    grid-template-areas: "header header" "nav main" "footer footer";
+    grid-template-rows: 0.2fr 5fr 0.2fr;
+    grid-template-columns: 300px 800px;
+}
+header{
+    background-color: #78db26;
+    grid-area: header;
+    padding: 15px;
+    background-image: url("");
+    text-align: justify;
+    border-radius: 20px;
+}
+header h1 {
+    text-align: center;
+    padding: 10px;
+    border-radius:10px;
+    background-color:#33adff;
+}
+/* ------------------------------------работа с навигацией--------------------------- */
+nav{
+    background-color: #b56beb;
+    grid-area: nav;
+    padding: 15px;
+    border-radius: 20px;
+   }
+nav h2{
+    text-align: center;
+    color:#fff;
+}
+.basis, .minor {
+    list-style-type: none;
+    
+}
+.basis li{
+    border-left: 10px solid #666;
+    margin: 5px 0;
+}
+.basis a{
+    background-color: #b56beb;
+    color:#fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    
+}
+.minor li{
+    border-left: 10px solid #33adff;
+    margin: 5px 60px;
+}
+/* ----------------------------------------------------------------------------- */
+main{
+    background-color: #d899aa;
+    grid-area: main;
+    padding: 15px;
+    border-radius: 20px;
+}
+footer{
+    margin: 10px 0 0 0;
+    background-color: #947aad;
+    grid-area: footer;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    height: 80px;
+}
+main h2
+    {text-align: center;}
+main img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ----------------------- адаптив */
+
+@media (max-width:560px) {
+    .wrapper{
+        max-width: 560px;
+        display: grid;
+        grid-template-areas: "header header" "nav main" "footer footer";
+        grid-template-rows: 0.2fr 5fr 0.2fr;
+        grid-template-columns: 240px 320px;
+    }
+    nav{
+        background-color: #b56beb;
+        grid-area: nav;
+        padding: 15px;
+        }   
+}
+
+@media (max-width:320px) {
+    nav{
+        display: none;
+    }
+    .wrapper{
+        max-width: 320px;
+        display: grid;
+        grid-template-areas: "header header" "main main" "footer footer";
+        grid-template-rows: 0.2fr 5fr 0.2fr;
+        grid-template-columns: 320px 320px;}
+}
